@@ -1,0 +1,40 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Environment variables & secrets
+.env
+!.env.example
+
+# Pytest & cache directories
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Output directories & generated audit logs
+output/
+*.log
+
+# Qdrant data storage
+qdrant_storage/
+
+# Node / Frontend (if added in future)
+node_modules/
+.next/
+out/
+build/
+
+# IDE & OS settings
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+

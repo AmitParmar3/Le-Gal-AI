@@ -1,0 +1,10 @@
+langgraph
+langchain
+langchain-community
+langchain-openai
+qdrant-client
+pypdf
+ragas
+flashrank
+pytest
+python-dotenv
