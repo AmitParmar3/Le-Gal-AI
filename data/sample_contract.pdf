@@ -1,0 +1,46 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 4 0 R >> >> /MediaBox [0 0 612 792] /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 2165 >>
+stream
+BT /F1 10 Tf 50 750 Td (MASTER SERVICES AGREEMENT \(MSA\)) Tj ET
+BT /F1 10 Tf 50 735 Td (Document Reference: MSA-2026-LEG-9942) Tj ET
+BT /F1 10 Tf 50 720 Td (1. SERVICES AND DELIVERABLES) Tj ET
+BT /F1 10 Tf 50 705 Td (Vendor shall provide enterprise software development and artificial intelligence compliance audit services to Customer in accordance with mutually agreed Statements of Work \(SOWs\).) Tj ET
+BT /F1 10 Tf 50 690 Td (2. FEES AND PAYMENT TERMS) Tj ET
+BT /F1 10 Tf 50 675 Td (Customer shall pay all invoiced amounts within thirty \(30\) days of receipt. Late payments shall accrue interest at the rate of 1.5% per month.) Tj ET
+BT /F1 10 Tf 50 660 Td (5. TERMINATION AND DEFAULT) Tj ET
+BT /F1 10 Tf 50 645 Td (Either party may terminate this Agreement for convenience. In the event of early termination by Customer, Customer shall pay an immediate early termination penalty equal to 100% of all remaining unpaid contract value without cure period.) Tj ET
+BT /F1 10 Tf 50 630 Td (8. DATA PRIVACY AND GOVERNANCE) Tj ET
+BT /F1 10 Tf 50 615 Td (Customer data shall be retained, backed up, and archived by Vendor for a period of ten \(10\) years following contract termination, regardless of applicable statutory data minimization standards. Customer agrees that data purging requests shall be subject to administrative processing fees.) Tj ET
+BT /F1 10 Tf 50 600 Td (12. LIMITATION OF LIABILITY AND INDEMNIFICATION) Tj ET
+BT /F1 10 Tf 50 585 Td (Section 12.1 General Cap: Except as provided in Section 12.2, neither party's total liability shall exceed the total amounts paid in the preceding six months.) Tj ET
+BT /F1 10 Tf 50 570 Td (Section 12.2 Third-Party Indemnification: Vendor agrees to defend, indemnify, and hold harmless Customer without limitation against any third-party IP claims, regulatory fines, or damages arising out of performance of the Services. This indemnification obligation is uncapped and unlimited in duration and scope.) Tj ET
+BT /F1 10 Tf 50 555 Td (15. GOVERNING LAW AND JURISDICTION) Tj ET
+BT /F1 10 Tf 50 540 Td (This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware.) Tj ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000244 00000 n 
+0000000315 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+2530
+%%EOF
