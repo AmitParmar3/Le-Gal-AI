@@ -18,10 +18,11 @@ module.exports = {
         textMuted: "var(--text-muted)",
         accentRiskHigh: "var(--accent-risk-high)",
         accentPurple: "var(--accent-purple)",
+        accentNavy: "var(--accent-navy)",
       },
       fontFamily: {
-        serif: ["Playfair Display", "Georgia", "serif"],
-        sans: ["Plus Jakarta Sans", "Inter", "sans-serif"],
+        serif: ["Libre Baskerville", "Baskerville", "Georgia", "serif"],
+        sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
       },
       borderRadius: {
