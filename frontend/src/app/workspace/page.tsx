@@ -7,6 +7,7 @@ import { DocumentViewer } from "@/components/audit/DocumentViewer";
 import { RiskHeader } from "@/components/audit/RiskHeader";
 import { ClauseCard } from "@/components/audit/ClauseCard";
 import { MOCK_FLAGGED_CLAUSES, MOCK_SAMPLE_REPORT } from "@/services/mockData";
+import { AuditReport } from "@/types";
 
 export default function WorkspacePage() {
   const [view, setView] = useState<"ingestion" | "audit">("audit");
@@ -14,7 +15,7 @@ export default function WorkspacePage() {
   const [highlightedClause, setHighlightedClause] = useState<string | undefined>("CL-12.2");
   const [isDocExpanded, setIsDocExpanded] = useState(false);
 
-  const handleStartAudit = (topics: string[]) => {
+  const handleStartAudit = (topics: string[], file?: File | null) => {
     setView("audit");
   };
 
@@ -36,7 +37,7 @@ export default function WorkspacePage() {
           <Dropzone onStartAudit={handleStartAudit} />
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start h-full">
-            {/* Left Pane: PDF Document Inspector (7 cols default, 12 cols when expanded) */}
+            {/* Left Pane: PDF Document Inspector */}
             <div
               className={`transition-all duration-300 h-full ${
                 isDocExpanded ? "lg:col-span-12" : "lg:col-span-7"
@@ -52,7 +53,7 @@ export default function WorkspacePage() {
               />
             </div>
 
-            {/* Right Pane: Redline Studio (Sticky RiskHeader + Scrollable Flagged Clauses) */}
+            {/* Right Pane: Redline Studio */}
             {!isDocExpanded && (
               <div className="lg:col-span-5 flex flex-col h-[calc(100vh-5rem)] overflow-hidden space-y-4">
                 {/* FIXED STICKY TOP BLOCK: Executive Risk Overview */}

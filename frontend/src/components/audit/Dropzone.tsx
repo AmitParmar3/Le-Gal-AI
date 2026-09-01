@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
-import { UploadCloud, CheckSquare, Square, Play, Loader2, CheckCircle2 } from "lucide-react";
+import React, { useState, useRef } from "react";
+import { UploadCloud, CheckSquare, Square, Play, Loader2, CheckCircle2, FileText } from "lucide-react";
 
 interface DropzoneProps {
-  onStartAudit: (topics: string[]) => void;
+  onStartAudit: (topics: string[], file?: File | null) => void;
 }
 
 export const Dropzone: React.FC<DropzoneProps> = ({ onStartAudit }) => {
@@ -14,8 +14,10 @@ export const Dropzone: React.FC<DropzoneProps> = ({ onStartAudit }) => {
     "Termination Penalties & Cure Window",
   ]);
 
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const steps = [
     "[1/4] Parsing PDF document structure and pages (pypdf)...",
@@ -39,18 +41,23 @@ export const Dropzone: React.FC<DropzoneProps> = ({ onStartAudit }) => {
     }
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setSelectedFile(e.target.files[0]);
+    }
+  };
+
   const handleInitiateAudit = () => {
     setIsProcessing(true);
     setCurrentStep(0);
 
-    // Simulate multi-agent processing steps
-    setTimeout(() => setCurrentStep(1), 800);
-    setTimeout(() => setCurrentStep(2), 1600);
-    setTimeout(() => setCurrentStep(3), 2400);
+    setTimeout(() => setCurrentStep(1), 600);
+    setTimeout(() => setCurrentStep(2), 1200);
+    setTimeout(() => setCurrentStep(3), 1800);
     setTimeout(() => {
       setIsProcessing(false);
-      onStartAudit(selectedTopics);
-    }, 3200);
+      onStartAudit(selectedTopics, selectedFile);
+    }, 2400);
   };
 
   return (
@@ -65,8 +72,16 @@ export const Dropzone: React.FC<DropzoneProps> = ({ onStartAudit }) => {
         </p>
       </div>
 
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept=".pdf"
+        className="hidden"
+        onChange={handleFileChange}
+      />
+
       {isProcessing ? (
-        /* Agent Processing Progress Console */
+        /* Agent Processing Console */
         <div className="border border-borderAccent bg-bgSurface p-8 space-y-6 shadow-md">
           <div className="flex items-center space-x-3 border-b border-borderSubtle pb-4">
             <Loader2 className="w-5 h-5 text-accentRiskHigh animate-spin" />
@@ -106,15 +121,19 @@ export const Dropzone: React.FC<DropzoneProps> = ({ onStartAudit }) => {
         <>
           {/* Dropzone Upload Box */}
           <div
-            onClick={handleInitiateAudit}
+            onClick={() => fileInputRef.current?.click()}
             className="border border-dashed border-borderAccent bg-bgBase p-12 text-center flex flex-col items-center justify-center space-y-4 hover:border-textMuted transition-colors cursor-pointer group shadow-sm"
           >
             <div className="w-12 h-12 bg-bgSurface border border-borderSubtle flex items-center justify-center text-textMuted group-hover:text-textPrimary transition-colors">
-              <UploadCloud className="w-6 h-6" />
+              {selectedFile ? (
+                <FileText className="w-6 h-6 text-emerald-600" />
+              ) : (
+                <UploadCloud className="w-6 h-6" />
+              )}
             </div>
             <div className="space-y-1">
-              <p className="font-serif text-lg font-bold text-textPrimary">
-                DRAG & DROP CONTRACT PDF HERE OR CLICK TO BROWSE
+              <p className="font-serif text-lg font-bold text-textPrimary uppercase">
+                {selectedFile ? `SELECTED: ${selectedFile.name}` : "DRAG & DROP CONTRACT PDF HERE OR CLICK TO BROWSE"}
               </p>
               <p className="font-mono text-[11px] text-textMuted uppercase font-semibold">
                 Supported formats: PDF, DOCX (Max 50MB) — Parent context window: 2000c / Child search: 400c
